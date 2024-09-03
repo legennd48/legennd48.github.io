@@ -1,0 +1,28 @@
+title: JournalHub API Documentation
+description: Comprehensive documentation for the JournalHub API
+theme: jekyll-theme-cayman
+
+# Navigation
+nav:
+  - title: Introduction
+    url: /introduction
+  - title: Authentication
+    url: /authentication
+  - title: User Management
+    url: /user-management
+  - title: Journal Entries
+    url: /journal-entries
+  - title: Error Handling
+    url: /error-handling
+  - title: Rate Limiting
+    url: /rate-limiting
+  - title: Security
+    url: /security
+  - title: Examples
+    url: /examples
+  - title: Code Samples
+    url: /code-samples
+  - title: Changelog
+    url: /changelog
+  - title: Glossary
+    url: /glossary
