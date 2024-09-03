@@ -2,3 +2,57 @@
 ---
 
 @import "{{ site.theme }}";
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.sidebar {
+    width: 250px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #ddd;
+}
+
+.content {
+    flex: 1;
+    padding: 15px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sidebar a:hover {
+    background-color: #007acc;
+    color: #fff;
+}
+
+h1, h2, h3 {
+    color: #007acc;
+}
+
+code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+pre {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
