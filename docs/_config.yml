@@ -5,28 +5,28 @@ theme: jekyll-theme-cayman
 # Navigation
 nav:
   - title: Introduction
-    url: /introduction
+    url: /docs/introduction
   - title: Authentication
-    url: /authentication
+    url: /docs/authentication
   - title: User Management
-    url: /user-management
+    url: /docs/user-management
   - title: Journal Entries
-    url: /journal-entries
+    url: /docs/journal-entries
   - title: Error Handling
-    url: /error-handling
+    url: /docs/error-handling
   - title: Rate Limiting
-    url: /rate-limiting
+    url: /docs/rate-limiting
   - title: Security
-    url: /security
+    url: /docs/security
   - title: Architecture
-    url: /architecture
+    url: /docs/architecture
   - title: Database
-    url: /database
+    url: /docs/database
   - title: Examples
-    url: /examples
+    url: /docs/examples
   - title: Code Samples
-    url: /code-samples
+    url: /docs/code-samples
   - title: Changelog
-    url: /changelog
+    url: /docs/changelog
   - title: Glossary
-    url: /glossary
+    url: /docs/glossary
