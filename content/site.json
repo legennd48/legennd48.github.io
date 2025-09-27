@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "name": "Abdulrazzaq A. Liasu",
+    "role": "Backend Engineer | Cybersecurity Associate | DevOps Enthusiast",
+    "location": "Ikeja, Lagos, Nigeria",
+    "summary": "Backend Engineer and Cybersecurity Associate with experience in building RESTful APIs, database optimization, and cloud deployments. Certified Sidmach Cybersecurity NextGen Program; passed ISC2 CC exam. Hands-on with authentication, RBAC, system hardening, and database backup/recovery. Skilled in Python, Node.js, Django, NestJS, PostgreSQL, and Docker, with a foundation in DevOps and CI/CD. Experienced in leading teams, mentoring, and technical writing.",
+    "contacts": {
+      "email": "legennd48@gmail.com",
+      "phone": "+234 708 504 3569",
+      "linkedin": "https://linkedin.com/in/aaliasu",
+      "github": "https://github.com/legennd48"
+    },
+    "cta": {
+      "downloadCvUrl": "/resume.pdf"
+    }
+  },
+  "skills": [
+    {
+      "category": "Backend & APIs",
+      "items": [
+        "Python (Django, Flask, FastAPI)",
+        "Node.js (Express, NestJS)",
+        "TypeScript",
+        "REST APIs, GraphQL",
+        "JWT, RBAC, Logging, Caching, Rate Limiting",
+        "Microservices, Async Programming"
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        "PostgreSQL, MySQL, MongoDB, Redis",
+        "Schema Design, Query Optimization, Indexing",
+        "Backup & Recovery"
+      ]
+    },
+    {
+      "category": "DevOps & Infrastructure",
+      "items": [
+        "Linux (Ubuntu), Nginx, Gunicorn, Bash",
+        "Docker, Kubernetes (basics)",
+        "AWS (EC2)",
+        "GitHub Actions, Jenkins",
+        "CI/CD, System Hardening, Monitoring & Logging"
+      ]
+    },
+    {
+      "category": "Cybersecurity",
+      "items": [
+        "AuthN/AuthZ, API Protection",
+        "Data Security: Backup/Recovery, Disaster Mitigation",
+        "Network & System Security: UFW, Access Control",
+        "Vulnerability management familiarity"
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "items": [
+        "Problem-Solving & Analytical Thinking",
+        "Technical Writing & Documentation",
+        "Mentorship & Teaching (chess, peer coaching)",
+        "Team Collaboration (Agile)",
+        "Leadership & Administration"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Beautiful Teachers (EdTech)",
+      "description": "EdTech platform backend with async improvements, backup/recovery, hardening, and RBAC.",
+      "tech": ["NestJS (TypeScript)", "MongoDB", "AWS", "Docker"],
+      "links": { "website": "https://beautifulteachers.com" },
+      "tags": ["backend", "security", "cloud"],
+      "status": "ongoing"
+    },
+    {
+      "name": "Bazary (E-commerce, ALX ProDev)",
+      "description": "Django/DRF e-commerce backend with PostgreSQL, Redis, Docker, JWT auth, and CI/CD on AWS.",
+      "tech": ["Django", "DRF", "PostgreSQL", "Redis", "Docker", "GitHub Actions", "AWS"],
+      "links": { "github": "https://github.com/legennd48/bazary" },
+      "tags": ["backend", "devops", "security"]
+    },
+    {
+      "name": "FluentFlow (OCR Translation)",
+      "description": "Text/image translation with OCR, caching, and secured API calls; deployed with Nginx/Gunicorn.",
+      "tech": ["Flask", "MySQL", "SQLAlchemy", "Google Translate API", "OCR", "Nginx"],
+      "links": { "github": "https://github.com/legennd48/fluentflow" },
+      "tags": ["backend", "security"]
+    },
+    {
+      "name": "JournalHub API",
+      "description": "Secure journaling API with authentication, validation, logging, and refactoring into standalone API.",
+      "tech": ["Node.js", "Express", "MongoDB", "JWT", "Joi", "Winston"],
+      "links": { "github": "https://github.com/legennd48/JournalHub_API" },
+      "tags": ["backend", "security"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Freelance Backend Developer",
+      "organization": "Self-employed",
+      "location": "Remote",
+      "startDate": "2023-03",
+      "endDate": null,
+      "highlights": [
+        "Designed and built RESTful APIs and microservices using Flask, Node.js, Django, and NestJS.",
+        "Implemented authentication, caching, and secure endpoints.",
+        "Contributed to backend security and system architecture decisions."
+      ]
+    },
+    {
+      "title": "Database Design Lead — GreenZTech Project",
+      "organization": "GreenZTech",
+      "location": "Remote",
+      "startDate": "2024-09",
+      "endDate": "2024-11",
+      "highlights": [
+        "Designed scalable PostgreSQL schema for a supply chain platform.",
+        "Integrated schema with Ethereum Smart Contracts for verification.",
+        "Automated table setup and indexing with scripts.",
+        "Provided technical documentation for backend integration."
+      ]
+    },
+    {
+      "title": "Founder & Lead Technician",
+      "organization": "LogicBase Tech & Edu Services",
+      "location": "Ekiti State, Nigeria",
+      "startDate": "2019-09",
+      "endDate": "2023-03",
+      "highlights": [
+        "Delivered IT support and system setup services.",
+        "Managed a team of 5 technicians, improving service efficiency.",
+        "Designed security policies and data recovery procedures.",
+        "Conducted training on system administration and networking basics."
+      ]
+    },
+    {
+      "title": "Head of Marketing & Administration",
+      "organization": "Marvel Chess International",
+      "location": "Ekiti State, Nigeria",
+      "startDate": "2015-09",
+      "endDate": "2019-09",
+      "highlights": [
+        "Designed and delivered chess curricula for children and adults.",
+        "Authored a children’s chess workbook to support structured learning.",
+        "Recruited, trained, and managed staff, ensuring effective program delivery.",
+        "Led marketing and outreach initiatives, increasing student enrollment.",
+        "Taught chess at beginner and intermediate levels, fostering problem-solving and critical thinking."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Sidmach Technologies – Cybersecurity NextGen Program",
+      "date": "2025-05",
+      "status": "Completed — Certified"
+    },
+    {
+      "title": "ISC2 Certified in Cybersecurity (CC)",
+      "date": "2025",
+      "status": "Passed; certification pending AMF"
+    },
+    { "title": "ALX ProDev – Advanced Backend Engineering", "date": "2025-08" },
+    { "title": "ALX Professional Foundations", "date": "2025-04" },
+    { "title": "ALX AiCE – AI Career Essentials", "date": "2024-11" },
+    { "title": "ALX Africa – Software Engineering (Full Stack)", "date": "2024-07" },
+    { "title": "Electronic Arts Virtual Experience Program — Forage", "date": "" },
+    { "title": "Volunteer Peer Reviewer — ALX Software Engineering Program", "date": "" }
+  ],
+  "contact": {
+    "email": "legennd48@gmail.com",
+    "linkedin": "https://linkedin.com/in/aaliasu",
+    "github": "https://github.com/legennd48",
+    "phone": "+234 708 504 3569"
+  },
+  "highlights": {
+    "chess": "Experienced chess instructor: designed curricula, authored a children’s chess workbook, and taught beginner/intermediate players, fostering problem-solving and critical thinking."
+  },
+  "terminal": {
+    "commands": ["help", "projects", "backend", "security", "resume", "contact", "chess"]
+  }
+}
