@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://legennd48.github.io/sitemap.xml

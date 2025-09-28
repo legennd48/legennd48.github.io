@@ -17,50 +17,53 @@
   "skills": [
     {
       "category": "Backend & APIs",
-      "items": [
-        "Python (Django, Flask, FastAPI)",
-        "Node.js (Express, NestJS)",
-        "TypeScript",
-        "REST APIs, GraphQL",
-        "JWT, RBAC, Logging, Caching, Rate Limiting",
-        "Microservices, Async Programming"
+      "skills": [
+        { "name": "Python", "icon": "python" },
+        { "name": "Django", "icon": "django" },
+        { "name": "FastAPI", "icon": "fastapi" },
+  { "name": "Node.js", "icon": "nodedotjs" },
+        { "name": "TypeScript", "icon": "typescript" },
+        { "name": "NestJS", "icon": "nestjs" }
       ]
     },
     {
       "category": "Databases",
-      "items": [
-        "PostgreSQL, MySQL, MongoDB, Redis",
-        "Schema Design, Query Optimization, Indexing",
-        "Backup & Recovery"
+      "skills": [
+        { "name": "PostgreSQL", "icon": "postgresql" },
+        { "name": "MySQL", "icon": "mysql" },
+        { "name": "MongoDB", "icon": "mongodb" },
+        { "name": "Redis", "icon": "redis" },
+        { "name": "SQLite", "icon": "sqlite" }
       ]
     },
     {
       "category": "DevOps & Infrastructure",
-      "items": [
-        "Linux (Ubuntu), Nginx, Gunicorn, Bash",
-        "Docker, Kubernetes (basics)",
-        "AWS (EC2)",
-        "GitHub Actions, Jenkins",
-        "CI/CD, System Hardening, Monitoring & Logging"
+      "skills": [
+        { "name": "Docker", "icon": "docker" },
+        { "name": "Kubernetes", "icon": "kubernetes" },
+  { "name": "GitHub Actions", "icon": "githubactions" },
+  { "name": "AWS", "icon": "amazonaws" },
+        { "name": "Nginx", "icon": "nginx" }
       ]
     },
     {
       "category": "Cybersecurity",
-      "items": [
-        "AuthN/AuthZ, API Protection",
-        "Data Security: Backup/Recovery, Disaster Mitigation",
-        "Network & System Security: UFW, Access Control",
-        "Vulnerability management familiarity"
+      "skills": [
+        { "name": "OWASP", "icon": "owasp" },
+  { "name": "JWT", "icon": "jsonwebtokens" },
+        { "name": "RBAC", "icon": "rbac" },
+        { "name": "SIEM", "icon": "siem" },
+        { "name": "Incident Response", "icon": "incident-response" }
       ]
     },
     {
       "category": "Soft Skills",
-      "items": [
-        "Problem-Solving & Analytical Thinking",
-        "Technical Writing & Documentation",
-        "Mentorship & Teaching (chess, peer coaching)",
-        "Team Collaboration (Agile)",
-        "Leadership & Administration"
+      "skills": [
+        { "name": "Mentorship", "icon": "mentorship" },
+        { "name": "Technical Writing", "icon": "technical-writing" },
+        { "name": "Leadership", "icon": "leadership" },
+        { "name": "Team Collaboration", "icon": "team-collaboration" },
+        { "name": "Strategic Thinking", "icon": "strategic-thinking" }
       ]
     }
   ],
@@ -167,6 +170,48 @@
     { "title": "Electronic Arts Virtual Experience Program — Forage", "date": "" },
     { "title": "Volunteer Peer Reviewer — ALX Software Engineering Program", "date": "" }
   ],
+  "testimonials": [
+    {
+      "name": "Adeola Oladele",
+      "role": "Senior Product Manager",
+      "company": "Beautiful Teachers",
+      "quote": "Abdulrazzaq transformed our legacy backend into a secure, observable service. He communicates clearly, ships fast, and never compromises on quality.",
+      "image": "/testimonials/adeola-oladele.svg"
+    },
+    {
+      "name": "Chiamaka Umeh",
+      "role": "Engineering Manager",
+      "company": "ALX ProDev",
+      "quote": "He pairs deep backend expertise with relentless curiosity. Every code review from Abdulrazzaq left the team learning something new.",
+      "image": "/testimonials/chiamaka-umeh.svg"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Cybersecurity NextGen Program Distinction",
+      "issuer": "Sidmach Technologies",
+      "date": "May 2025",
+      "description": "Recognized for delivering the top capstone on cloud security hardening and incident response automation.",
+      "image": "/awards/sidmach-nextgen-distinction.svg",
+      "credentialUrl": "https://www.sidmach.com/"
+    },
+    {
+      "title": "ISC2 Certified in Cybersecurity (CC)",
+      "issuer": "ISC2",
+      "date": "2025",
+      "description": "Completed the ISC2 CC examination, demonstrating global cybersecurity fundamentals and best practices.",
+      "image": "/awards/isc2-cc-certificate.svg",
+      "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity"
+    },
+    {
+      "title": "ALX ProDev — Advanced Backend Engineering Graduate",
+      "issuer": "ALX",
+      "date": "August 2025",
+      "description": "Awarded for building and deploying a production-ready e-commerce backend with CI/CD and observability.",
+      "image": "/awards/alx-backend-honors.svg",
+      "credentialUrl": "https://www.alxafrica.com/pro-dev/"
+    }
+  ],
   "contact": {
     "email": "legennd48@gmail.com",
     "linkedin": "https://linkedin.com/in/aaliasu",
@@ -177,6 +222,16 @@
     "chess": "Experienced chess instructor: designed curricula, authored a children’s chess workbook, and taught beginner/intermediate players, fostering problem-solving and critical thinking."
   },
   "terminal": {
-    "commands": ["help", "projects", "backend", "security", "resume", "contact", "chess"]
+    "commands": [
+      "help",
+      "projects",
+      "backend",
+      "security",
+      "awards",
+      "testimonials",
+      "resume",
+      "contact",
+      "chess"
+    ]
   }
 }

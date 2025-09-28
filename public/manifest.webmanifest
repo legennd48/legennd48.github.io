@@ -1,0 +1,11 @@
+{
+  "name": "Abdulrazzaq A. Liasu — Portfolio",
+  "short_name": "A.A. Liasu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" }
+  ]
+}

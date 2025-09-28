@@ -26,15 +26,37 @@ const Experience = z.object({
   highlights: z.array(z.string()),
 });
 
+const SkillItem = z.object({
+  name: z.string(),
+  icon: z.string(),
+});
+
 const SkillCategory = z.object({
   category: z.string(),
-  items: z.array(z.string()),
+  skills: z.array(SkillItem),
 });
 
 const Certification = z.object({
   title: z.string(),
   date: z.string().optional(),
   status: z.string().optional(),
+});
+
+const Testimonial = z.object({
+  name: z.string(),
+  role: z.string(),
+  company: z.string().optional(),
+  quote: z.string(),
+  image: z.string().optional(),
+});
+
+const Award = z.object({
+  title: z.string(),
+  issuer: z.string(),
+  date: z.string().optional(),
+  description: z.string().optional(),
+  image: z.string(),
+  credentialUrl: z.string().url().optional(),
 });
 
 export const SiteSchema = z.object({
@@ -55,6 +77,8 @@ export const SiteSchema = z.object({
   projects: z.array(Project),
   experience: z.array(Experience),
   certifications: z.array(Certification).optional(),
+  testimonials: z.array(Testimonial).optional(),
+  awards: z.array(Award).optional(),
   contact: z.object({
     email: z.string().email(),
     linkedin: z.string().url().optional(),

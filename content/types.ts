@@ -22,15 +22,37 @@ export type Experience = {
   highlights: string[];
 };
 
+export type SkillItem = {
+  name: string;
+  icon: string;
+};
+
 export type SkillCategory = {
   category: string;
-  items: string[];
+  skills: SkillItem[];
 };
 
 export type Certification = {
   title: string;
   date?: string;
   status?: string;
+};
+
+export type Testimonial = {
+  name: string;
+  role: string;
+  company?: string;
+  quote: string;
+  image?: string;
+};
+
+export type Award = {
+  title: string;
+  issuer: string;
+  date?: string;
+  description?: string;
+  image: string;
+  credentialUrl?: string;
 };
 
 export type SiteContent = {
@@ -51,6 +73,8 @@ export type SiteContent = {
   projects: Project[];
   experience: Experience[];
   certifications?: Certification[];
+  testimonials?: Testimonial[];
+  awards?: Award[];
   contact: {
     email: string;
     linkedin?: string;

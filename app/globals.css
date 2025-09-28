@@ -11,3 +11,15 @@ html, body { height: 100%; }
 
 /* Smooth transitions for theme switch later */
 * { @apply transition-colors duration-200; }
+
+/* Accessible outline only when navigating by keyboard (plain CSS) */
+*:focus-visible { outline: 2px solid rgba(56, 189, 248, 0.9); outline-offset: 3px; }
+
+/* Section reveal utility */
+.reveal { opacity: 0; transform: translateY(0.5rem); animation: fadein 450ms ease-out forwards; }
+.reveal-delay { animation-delay: 120ms; }
+@keyframes fadein { to { opacity: 1; transform: translateY(0); } }
+
+/* Screen-reader only utility (in case Tailwind sr-only is purged) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+.not-sr-only { position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal; }

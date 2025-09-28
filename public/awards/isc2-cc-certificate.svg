@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="512" viewBox="0 0 768 512" role="img" aria-labelledby="title desc">
+  <title id="title">ISC2 Certified in Cybersecurity Certificate</title>
+  <desc id="desc">Certificate artwork celebrating ISC2 CC achievement</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#022c22" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a7f3d0" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+  <rect width="768" height="512" rx="28" fill="#031a16" />
+  <rect x="24" y="24" width="720" height="464" rx="24" fill="url(#bg2)" stroke="#34d399" stroke-width="4" opacity="0.95" />
+  <text x="384" y="112" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="30" fill="#6ee7b7">International Information System Security Certification Consortium</text>
+  <text x="384" y="180" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="48" fill="#ecfdf5" font-weight="700">Certified in Cybersecurity</text>
+  <text x="384" y="240" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="22" fill="#bbf7d0">Presented to</text>
+  <text x="384" y="290" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="40" fill="#ecfdf5" font-weight="600">Abdulrazzaq A. Liasu</text>
+  <text x="384" y="340" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="18" fill="#d1fae5">Recognized for demonstrating foundational cybersecurity expertise.</text>
+  <text x="384" y="392" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="16" fill="#99f6e4">ISC2 — Verified 2025</text>
+  <path d="M160 400 h448" stroke="url(#accent2)" stroke-width="6" stroke-linecap="round" opacity="0.8" />
+</svg>

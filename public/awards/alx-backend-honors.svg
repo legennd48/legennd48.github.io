@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="512" viewBox="0 0 768 512" role="img" aria-labelledby="title desc">
+  <title id="title">ALX ProDev Backend Engineering Honors</title>
+  <desc id="desc">Certificate graphic for ALX ProDev Advanced Backend Engineering graduate honors</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9a8d4" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <rect width="768" height="512" rx="28" fill="#0f172a" />
+  <rect x="28" y="28" width="712" height="456" rx="24" fill="url(#bg3)" stroke="url(#accent3)" stroke-width="5" opacity="0.94" />
+  <text x="384" y="120" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="34" fill="#f5f3ff" font-weight="700">ALX ProDev</text>
+  <text x="384" y="168" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="24" fill="#ede9fe">Advanced Backend Engineering</text>
+  <text x="384" y="228" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="44" fill="#eef2ff" font-weight="700">Graduate with Honors</text>
+  <text x="384" y="286" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="20" fill="#e0e7ff">Awarded to</text>
+  <text x="384" y="332" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="38" fill="#f8fafc" font-weight="600">Abdulrazzaq A. Liasu</text>
+  <text x="384" y="380" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="18" fill="#c7d2fe">For deploying a production-grade e-commerce platform with CI/CD & observability.</text>
+  <text x="384" y="420" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="16" fill="#d6bcfa">Issued August 2025</text>
+</svg>

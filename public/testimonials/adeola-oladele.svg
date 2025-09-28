@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Adeola Oladele Portrait</title>
+  <desc id="desc">Stylised avatar badge for Adeola Oladele</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="24" fill="url(#grad)" />
+  <circle cx="100" cy="84" r="42" fill="#fefce8" opacity="0.85" />
+  <rect x="56" y="124" width="88" height="52" rx="18" fill="#fef3c7" opacity="0.85" />
+  <text x="100" y="150" text-anchor="middle" font-family="'Inter', 'Arial', sans-serif" font-size="32" fill="#92400e" font-weight="700">AO</text>
+</svg>

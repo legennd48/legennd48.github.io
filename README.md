@@ -9,11 +9,10 @@ Next.js (App Router) + TailwindCSS project for a personal portfolio with Normal 
 ## Scripts
 - `npm run dev` — start dev server
 - `npm run build` — build production
-- `npm run export` — static export to `out/` (for GitHub Pages)
 - `npm run start` — start production server (not used for Pages)
 
 ## Notes
-- Static export is enabled via `next.config.mjs` (`output: 'export'`).
+- Static export is enabled via `next.config.mjs` (`output: 'export'`). After `npm run build`, static files are emitted to `out/` automatically.
 - Images are unoptimized and trailing slashes are enabled for Pages compatibility.
 
 ## Next Steps
