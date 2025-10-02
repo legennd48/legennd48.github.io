@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Beautiful Teachers (EdTech)",
+    "tagline": "Modernizing an EdTech platform with secure, observable services.",
+    "description": "Led the ongoing rebuild of Beautiful Teachers' core platform, introducing asynchronous pipelines, hardened infrastructure, and automated resilience practices so the product can scale safely.",
+    "highlights": [
+      "Refactored monolithic APIs into composable NestJS services with async queues for heavy operations.",
+      "Implemented role-based access control, secret rotation, and fleet hardening guidelines across environments.",
+      "Automated daily backups and restore drills, cutting recovery time objectives from hours to minutes."
+    ],
+    "tech": ["NestJS (TypeScript)", "MongoDB", "AWS", "Docker", "BullMQ", "Grafana"],
+    "links": {
+      "website": "https://beautifulteachers.com"
+    },
+    "tags": ["backend", "security", "cloud"],
+    "status": "Active engagement",
+    "year": "2024 – Present",
+    "image": "/projects/placeholder-mesh.svg"
+  },
+  {
+    "name": "Bazary (ALX ProDev Capstone)",
+    "tagline": "Production-grade e-commerce backend with CI/CD automation.",
+    "description": "Architected a resilient marketplace backend that balances speed, reliability, and observability while following 12-factor principles.",
+    "highlights": [
+      "Containerized Django/DRF stack with PostgreSQL, Redis caching, and task workers for order flows.",
+      "Built JWT-based authentication with refresh tokens, throttling, and audit logging for sensitive actions.",
+      "Shipped GitHub Actions pipelines deploying to AWS Lightsail with smoke tests and health probes."
+    ],
+    "tech": ["Django", "Django REST Framework", "PostgreSQL", "Redis", "Docker", "GitHub Actions", "AWS"],
+    "links": {
+      "github": "https://github.com/legennd48/bazary"
+    },
+    "tags": ["backend", "devops", "security"],
+    "year": "2024",
+    "image": "/projects/placeholder-mesh.svg"
+  },
+  {
+    "name": "FluentFlow (OCR Translation)",
+    "tagline": "OCR-assisted translation service with smart caching and secure APIs.",
+    "description": "Designed a multilingual translation API that handles text, images, and PDF inputs while keeping costs predictable and endpoints secure.",
+    "highlights": [
+      "Integrated Tesseract OCR with Google Translate APIs and fallback providers for resiliency.",
+      "Added multi-layer caching (Redis + CDN headers) that cut response latency by 40% on repeated jobs.",
+      "Hardened the stack with JWT auth, rate limiting, and audit logs streamed to ELK for monitoring."
+    ],
+    "tech": ["Flask", "MySQL", "SQLAlchemy", "Redis", "Google Translate API", "Nginx", "Gunicorn"],
+    "links": {
+      "github": "https://github.com/legennd48/fluentflow"
+    },
+    "tags": ["backend", "security"],
+    "year": "2023",
+    "image": "/projects/placeholder-mesh.svg"
+  },
+  {
+    "name": "JournalHub API",
+    "tagline": "Secure journaling platform with observability-first mindset.",
+    "description": "Rebuilt JournalHub's API as a dedicated service with modern auth, validation, and traceable logging so teams can ship features confidently.",
+    "highlights": [
+      "Introduced declarative validation with Joi schemas and centralized error handling for consistent responses.",
+      "Implemented JWT authentication, refresh token rotation, and granular permission scopes for content access.",
+      "Added structured logging, request correlation IDs, and log shipping via Winston for root-cause analysis."
+    ],
+    "tech": ["Node.js", "Express", "MongoDB", "JWT", "Joi", "Winston"],
+    "links": {
+      "github": "https://github.com/legennd48/JournalHub_API"
+    },
+    "tags": ["backend", "security"],
+    "year": "2022",
+    "image": "/projects/placeholder-mesh.svg"
+  },
+  {
+    "name": "GreenZTech",
+    "tagline": "Database design lead for a supply chain verification platform.",
+    "description": "Designed and implemented a scalable PostgreSQL schema for a supply chain verification platform. Integrated the database with Ethereum smart contracts to guarantee data authenticity and automated schema setup and indexing via Bash scripts while delivering backend integration documentation.",
+    "highlights": [
+      "Modelled resilient relational schemas handling provenance, verification proofs, and audit trails.",
+      "Bridged PostgreSQL data with Ethereum smart contracts to sign and validate critical events.",
+      "Authored automation scripts and integration guides that accelerated backend onboarding."
+    ],
+    "tech": ["PostgreSQL", "Ethereum Smart Contracts", "Bash Scripts"],
+    "tags": ["backend", "data", "web3"],
+    "status": "Private Project",
+    "year": "2024",
+    "image": "/projects/placeholder-mesh.svg"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Freelance Backend Developer",
+    "organization": "Self-employed",
+    "location": "Remote",
+    "startDate": "2023-03",
+    "endDate": null,
+    "highlights": [
+      "Designed and built RESTful APIs and microservices using Flask, Node.js, Django, and NestJS.",
+      "Implemented authentication, caching, and secure endpoints.",
+      "Contributed to backend security and system architecture decisions."
+    ]
+  },
+  {
+    "title": "Database Design Lead — GreenZTech Project",
+    "organization": "GreenZTech",
+    "location": "Remote",
+    "startDate": "2024-09",
+    "endDate": "2024-11",
+    "highlights": [
+      "Designed scalable PostgreSQL schema for a supply chain platform.",
+      "Integrated schema with Ethereum Smart Contracts for verification.",
+      "Automated table setup and indexing with scripts.",
+      "Provided technical documentation for backend integration."
+    ]
+  },
+  {
+    "title": "Founder & Lead Technician",
+    "organization": "LogicBase Tech & Edu Services",
+    "location": "Ekiti State, Nigeria",
+    "startDate": "2019-09",
+    "endDate": "2023-03",
+    "highlights": [
+      "Delivered IT support and system setup services.",
+      "Managed a team of 5 technicians, improving service efficiency.",
+      "Designed security policies and data recovery procedures.",
+      "Conducted training on system administration and networking basics."
+    ]
+  },
+  {
+    "title": "Head of Marketing & Administration",
+    "organization": "Marvel Chess International",
+    "location": "Ekiti State, Nigeria",
+    "startDate": "2015-09",
+    "endDate": "2019-09",
+    "highlights": [
+      "Designed and delivered chess curricula for children and adults.",
+      "Authored a children’s chess workbook to support structured learning.",
+      "Recruited, trained, and managed staff, ensuring effective program delivery.",
+      "Led marketing and outreach initiatives, increasing student enrollment.",
+      "Taught chess at beginner and intermediate levels, fostering problem-solving and critical thinking."
+    ]
+  }
+]

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { IconType } from 'react-icons';
 import {
@@ -34,13 +34,20 @@ import {
   FiUsers,
 } from 'react-icons/fi';
 import { getSiteContent } from '@/content/schema';
+import { getProjects } from '@/content/projects';
+import { getExperience } from '@/content/experience';
+import { getTestimonials } from '@/content/testimonials';
+import { getAwards } from '@/content/awards';
+import { getCertifications } from '@/content/certifications';
 import Section from '@/components/Section';
 import ProjectCard from '@/components/ProjectCard';
+import ProjectModal from '@/components/ProjectModal';
 import ExperienceItem from '@/components/ExperienceItem';
 import TestimonialCard from '@/components/TestimonialCard';
-import AwardCard from '@/components/AwardCard';
+import CredentialCard from '@/components/CredentialCard';
 import { useMode } from '@/components/ModeContext';
 import Terminal from '@/components/terminal/Terminal';
+import type { Project } from '@/content/types';
 
 const skillIconMap: Record<string, IconType> = {
   python: SiPython,
@@ -83,11 +90,26 @@ export default function HomePage() {
   const site = getSiteContent();
   const { mode } = useMode();
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const projects = useMemo(() => getProjects(), []);
+  const experience = useMemo(() => getExperience(), []);
+  const testimonials = useMemo(() => getTestimonials(), []);
+  const awards = useMemo(() => getAwards(), []);
+  const certifications = useMemo(() => getCertifications(), []);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [expandedExperiences, setExpandedExperiences] = useState<Record<string, boolean>>({});
 
   const softSkillsCategory = site.skills.find((cat) => cat.category.toLowerCase().includes('soft'));
   const orderedSkillCategories = softSkillsCategory
     ? [...site.skills.filter((cat) => cat !== softSkillsCategory), softSkillsCategory]
     : site.skills;
+
+  const handleProjectSelect = (project: Project) => {
+    setSelectedProject(project);
+  };
+
+  const handleProjectClose = () => {
+    setSelectedProject(null);
+  };
 
   const skillCards = orderedSkillCategories.flatMap((cat, index) => {
     const isSoftCategory = softSkillsCategory && cat.category === softSkillsCategory.category;
@@ -313,58 +335,106 @@ export default function HomePage() {
       </Section>
 
       <Section id="projects" title="Projects">
-        <div className="grid gap-4 sm:grid-cols-2">
-          {site.projects.map((p) => (
-            <div key={p.name} className="reveal"><ProjectCard p={p} /></div>
-          ))}
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project, index) => {
+            const total = projects.length;
+            const remainder = total % 3;
+            let alignmentClass = '';
+            if (remainder === 1 && index === total - 1) {
+              alignmentClass = 'xl:col-start-2';
+            } else if (remainder === 2) {
+              if (index === total - 2) alignmentClass = 'xl:col-start-1';
+              if (index === total - 1) alignmentClass = 'xl:col-start-3';
+            }
+            return (
+              <div key={project.name} className={alignmentClass}>
+                <ProjectCard project={project} index={index} onSelect={handleProjectSelect} />
+              </div>
+            );
+          })}
         </div>
       </Section>
 
       <Section id="experience" title="Experience">
-        <div className="grid gap-4">
-          {site.experience.map((e) => (
-            <div key={`${e.title}-${e.organization}-${e.startDate}`} className="reveal"><ExperienceItem e={e} /></div>
-          ))}
+        <div className="relative pl-9 sm:pl-12">
+          <span className="pointer-events-none absolute left-3 top-3 h-[calc(100%-1.5rem)] w-px bg-gradient-to-b from-cyan-400/60 via-white/10 to-transparent sm:left-4" aria-hidden />
+          <div className="flex flex-col gap-10">
+            {experience.map((exp, index) => {
+              const key = `${exp.title}-${exp.organization}-${exp.startDate}`;
+              const startYear = Number.parseInt(exp.startDate.split('-')[0] ?? '', 10);
+              const compact = Number.isFinite(startYear) && startYear < 2023;
+              const expanded = expandedExperiences[key] ?? false;
+              const toggle = compact
+                ? () => setExpandedExperiences((prev) => ({ ...prev, [key]: !prev[key] }))
+                : undefined;
+              return (
+                <ExperienceItem
+                  key={key}
+                  experience={exp}
+                  index={index}
+                  compact={compact}
+                  expanded={expanded}
+                  onToggle={toggle}
+                />
+              );
+            })}
+          </div>
         </div>
       </Section>
 
-      {site.testimonials?.length ? (
+      {testimonials?.length ? (
         <Section id="testimonials" title="Testimonials">
           <div className="grid gap-6 md:grid-cols-2">
-            {site.testimonials.map((t) => (
-              <TestimonialCard key={`${t.name}-${t.company || ''}`} testimonial={t} />
+            {testimonials.map((t, index) => (
+              <TestimonialCard key={`${t.name}-${t.company || ''}`} testimonial={t} index={index} />
             ))}
           </div>
         </Section>
       ) : null}
 
-      {site.awards?.length ? (
+      {awards?.length ? (
         <Section id="awards" title="Awards & Recognitions">
-          <div className="grid gap-6 md:grid-cols-2">
-            {site.awards.map((a) => (
-              <AwardCard key={`${a.title}-${a.issuer}`} award={a} />
-            ))}
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {awards.map((award, index) => {
+              const total = awards.length;
+              const remainder = total % 3;
+              let alignmentClass = '';
+              if (remainder === 1 && index === total - 1) {
+                alignmentClass = 'xl:col-start-2';
+              } else if (remainder === 2) {
+                if (index === total - 2) alignmentClass = 'xl:col-start-1';
+                if (index === total - 1) alignmentClass = 'xl:col-start-3';
+              }
+              return (
+                <div key={`${award.title}-${award.issuer}`} className={alignmentClass}>
+                  <CredentialCard credential={{ ...award, kind: 'award' }} index={index} />
+                </div>
+              );
+            })}
           </div>
         </Section>
       ) : null}
 
-      {site.certifications?.length ? (
+      {certifications?.length ? (
         <Section id="certifications" title="Education & Certifications">
-          <ul className="grid gap-3 text-sm text-slate-200/85 md:grid-cols-2">
-            {site.certifications.map((c) => (
-              <li
-                key={`${c.title}-${c.date || ''}`}
-                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur"
-              >
-                <span className="mt-1.5 h-2 w-2 rounded-full bg-gradient-to-br from-cyan-400 via-fuchsia-400 to-amber-300" aria-hidden />
-                <span>
-                  <span className="font-medium text-slate-100">{c.title}</span>
-                  {c.date ? <span className="text-slate-400"> — {c.date}</span> : null}
-                  {c.status ? <span className="block text-xs uppercase tracking-[0.3em] text-slate-400/80">{c.status}</span> : null}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            {certifications.map((cert, index) => {
+              const total = certifications.length;
+              const remainder = total % 3;
+              let alignmentClass = '';
+              if (remainder === 1 && index === total - 1) {
+                alignmentClass = 'xl:col-start-2';
+              } else if (remainder === 2) {
+                if (index === total - 2) alignmentClass = 'xl:col-start-1';
+                if (index === total - 1) alignmentClass = 'xl:col-start-3';
+              }
+              return (
+                <div key={`${cert.title}-${cert.date || ''}`} className={alignmentClass}>
+                  <CredentialCard credential={{ ...cert, kind: 'certification' }} index={index} />
+                </div>
+              );
+            })}
+          </div>
         </Section>
       ) : null}
 
@@ -420,6 +490,8 @@ export default function HomePage() {
           ) : null}
         </ul>
       </Section>
+
+          <ProjectModal project={selectedProject} onClose={handleProjectClose} />
     </main>
   );
 }

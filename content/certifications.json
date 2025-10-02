@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Sidmach Technologies – Cybersecurity NextGen Program",
+    "issuer": "Sidmach Technologies",
+    "date": "2025-05",
+    "status": "Completed — Certified",
+    "description": "Immersive cybersecurity residency focused on secure cloud architecture, threat hunting, and incident readiness.",
+    "highlight": "Graduate Certificate",
+    "credentialUrl": "https://www.sidmach.com/",
+    "icon": "shield"
+  },
+  {
+    "title": "ISC2 Certified in Cybersecurity (CC)",
+    "issuer": "ISC2",
+    "date": "2025",
+    "status": "Passed; certification pending AMF",
+    "description": "Global baseline certification validating cybersecurity principles, network security, and incident response.",
+    "highlight": "CC Exam Passed",
+    "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity",
+    "icon": "lock"
+  },
+  {
+    "title": "ALX ProDev – Advanced Backend Engineering",
+    "issuer": "ALX",
+    "date": "2025-08",
+    "description": "Advanced fellowship covering scalable backend architecture, observability, and DevOps practices.",
+    "highlight": "Backend Fellowship Graduate",
+    "icon": "server"
+  },
+  {
+    "title": "ALX Professional Foundations",
+    "issuer": "ALX",
+    "date": "2025-04",
+    "description": "Career accelerator focused on leadership, communication, and remote collaboration excellence.",
+    "highlight": "Leadership Foundations",
+    "icon": "compass"
+  },
+  {
+    "title": "ALX AiCE – AI Career Essentials",
+    "issuer": "ALX",
+    "date": "2024-11",
+    "description": "AI literacy program exploring responsible AI adoption, prompt engineering, and modern tooling.",
+    "highlight": "AI Career Essentials",
+    "icon": "spark"
+  },
+  {
+    "title": "ALX Africa – Software Engineering (Full Stack)",
+    "issuer": "ALX Africa",
+    "date": "2024-07",
+    "description": "18-month full stack fellowship spanning algorithms, backend systems, and team delivery.",
+    "highlight": "Full-Stack Fellowship",
+    "icon": "layers"
+  },
+  {
+    "title": "Electronic Arts Virtual Experience Program — Forage",
+    "issuer": "Electronic Arts",
+    "date": "",
+    "description": "Virtual studio sprint exploring EA's game tech workflows, APIs, and collaborative practices.",
+    "highlight": "Game Tech Experience",
+    "icon": "gamepad"
+  },
+  {
+    "title": "Volunteer Peer Reviewer — ALX Software Engineering Program",
+    "issuer": "ALX",
+    "date": "",
+    "description": "Reviewed peer submissions to uphold engineering quality and mentor junior developers.",
+    "highlight": "Peer Reviewer",
+    "icon": "mentor"
+  }
+]

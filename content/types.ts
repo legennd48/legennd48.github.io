@@ -2,15 +2,23 @@ export type LinkSet = {
   website?: string;
   github?: string;
   demo?: string;
+  docs?: string;
+  video?: string;
+  caseStudy?: string;
 };
 
 export type Project = {
   name: string;
+  tagline?: string;
   description: string;
+  highlights?: string[];
   tech: string[];
-  links?: LinkSet;
-  tags?: string[];
+  image?: string;
+  thumbnail?: string;
   status?: string;
+  tags?: string[];
+  year?: string;
+  links?: LinkSet;
 };
 
 export type Experience = {
@@ -34,8 +42,14 @@ export type SkillCategory = {
 
 export type Certification = {
   title: string;
+  issuer?: string;
   date?: string;
   status?: string;
+  description?: string;
+  highlight?: string;
+  credentialUrl?: string;
+  image?: string;
+  icon?: string;
 };
 
 export type Testimonial = {
@@ -53,6 +67,8 @@ export type Award = {
   description?: string;
   image: string;
   credentialUrl?: string;
+  highlight?: string;
+  icon?: string;
 };
 
 export type SiteContent = {
@@ -70,7 +86,6 @@ export type SiteContent = {
     cta?: { downloadCvUrl?: string };
   };
   skills: SkillCategory[];
-  projects: Project[];
   experience: Experience[];
   certifications?: Certification[];
   testimonials?: Testimonial[];

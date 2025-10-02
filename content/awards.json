@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Cybersecurity NextGen Program Distinction",
+    "issuer": "Sidmach Technologies",
+    "date": "May 2025",
+    "description": "Recognized for delivering the top capstone on cloud security hardening and incident response automation.",
+    "image": "/awards/sidmach-nextgen-distinction.svg",
+    "credentialUrl": "https://www.sidmach.com/",
+    "highlight": "Top Capstone Distinction",
+    "icon": "shield"
+  },
+  {
+    "title": "ISC2 Certified in Cybersecurity (CC)",
+    "issuer": "ISC2",
+    "date": "2025",
+    "description": "Completed the ISC2 CC examination, demonstrating global cybersecurity fundamentals and best practices.",
+    "image": "/awards/isc2-cc-certificate.svg",
+    "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity",
+    "highlight": "ISC2 CC Certified",
+    "icon": "lock"
+  },
+  {
+    "title": "ALX ProDev — Advanced Backend Engineering Graduate",
+    "issuer": "ALX",
+    "date": "August 2025",
+    "description": "Awarded for building and deploying a production-ready e-commerce backend with CI/CD and observability.",
+    "image": "/awards/alx-backend-honors.svg",
+    "credentialUrl": "https://www.alxafrica.com/pro-dev/",
+    "highlight": "Capstone Honors",
+    "icon": "server"
+  }
+]

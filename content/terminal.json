@@ -1,0 +1,13 @@
+{
+  "commands": [
+    "help",
+    "projects",
+    "backend",
+    "security",
+    "awards",
+    "testimonials",
+    "resume",
+    "contact",
+    "chess"
+  ]
+}

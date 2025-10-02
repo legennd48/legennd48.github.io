@@ -1,0 +1,15 @@
+{
+  "name": "Abdulrazzaq A. Liasu",
+  "role": "Backend Engineer | Cybersecurity Associate | DevOps Enthusiast",
+  "location": "Ikeja, Lagos, Nigeria",
+  "summary": "Backend Engineer and Cybersecurity Associate with experience in building RESTful APIs, database optimization, and cloud deployments. Certified Sidmach Cybersecurity NextGen Program; passed ISC2 CC exam. Hands-on with authentication, RBAC, system hardening, and database backup/recovery. Skilled in Python, Node.js, Django, NestJS, PostgreSQL, and Docker, with a foundation in DevOps and CI/CD. Experienced in leading teams, mentoring, and technical writing.",
+  "contacts": {
+    "email": "legennd48@gmail.com",
+    "phone": "+234 708 504 3569",
+    "linkedin": "https://linkedin.com/in/aaliasu",
+    "github": "https://github.com/legennd48"
+  },
+  "cta": {
+    "downloadCvUrl": "/resume.pdf"
+  }
+}

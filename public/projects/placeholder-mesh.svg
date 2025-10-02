@@ -1,0 +1,29 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Project placeholder image</title>
+  <desc>Soft gradient mesh used as a fallback thumbnail for portfolio projects.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#6366f1" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="1" />
+    </radialGradient>
+    <radialGradient id="accent" cx="75%" cy="65%" r="55%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </radialGradient>
+    <linearGradient id="bars" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#c084fc" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="#0b1220" />
+  <rect width="1600" height="1000" fill="url(#glow)" />
+  <rect width="1600" height="1000" fill="url(#accent)" opacity="0.8" />
+  <g opacity="0.9">
+    <path d="M0 160 L1600 0 L1600 80 L0 240 Z" fill="url(#bars)" />
+    <path d="M0 760 L1600 920 L1600 1000 L0 840 Z" fill="url(#bars)" />
+  </g>
+  <circle cx="250" cy="220" r="160" fill="#facc15" opacity="0.12" />
+  <circle cx="1280" cy="780" r="220" fill="#38bdf8" opacity="0.14" />
+</svg>

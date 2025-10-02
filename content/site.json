@@ -67,37 +67,6 @@
       ]
     }
   ],
-  "projects": [
-    {
-      "name": "Beautiful Teachers (EdTech)",
-      "description": "EdTech platform backend with async improvements, backup/recovery, hardening, and RBAC.",
-      "tech": ["NestJS (TypeScript)", "MongoDB", "AWS", "Docker"],
-      "links": { "website": "https://beautifulteachers.com" },
-      "tags": ["backend", "security", "cloud"],
-      "status": "ongoing"
-    },
-    {
-      "name": "Bazary (E-commerce, ALX ProDev)",
-      "description": "Django/DRF e-commerce backend with PostgreSQL, Redis, Docker, JWT auth, and CI/CD on AWS.",
-      "tech": ["Django", "DRF", "PostgreSQL", "Redis", "Docker", "GitHub Actions", "AWS"],
-      "links": { "github": "https://github.com/legennd48/bazary" },
-      "tags": ["backend", "devops", "security"]
-    },
-    {
-      "name": "FluentFlow (OCR Translation)",
-      "description": "Text/image translation with OCR, caching, and secured API calls; deployed with Nginx/Gunicorn.",
-      "tech": ["Flask", "MySQL", "SQLAlchemy", "Google Translate API", "OCR", "Nginx"],
-      "links": { "github": "https://github.com/legennd48/fluentflow" },
-      "tags": ["backend", "security"]
-    },
-    {
-      "name": "JournalHub API",
-      "description": "Secure journaling API with authentication, validation, logging, and refactoring into standalone API.",
-      "tech": ["Node.js", "Express", "MongoDB", "JWT", "Joi", "Winston"],
-      "links": { "github": "https://github.com/legennd48/JournalHub_API" },
-      "tags": ["backend", "security"]
-    }
-  ],
   "experience": [
     {
       "title": "Freelance Backend Developer",
@@ -155,20 +124,72 @@
   "certifications": [
     {
       "title": "Sidmach Technologies – Cybersecurity NextGen Program",
+      "issuer": "Sidmach Technologies",
       "date": "2025-05",
-      "status": "Completed — Certified"
+      "status": "Completed — Certified",
+      "description": "Immersive cybersecurity residency focused on secure cloud architecture, threat hunting, and incident readiness.",
+      "highlight": "Graduate Certificate",
+      "credentialUrl": "https://www.sidmach.com/",
+      "icon": "shield"
     },
     {
       "title": "ISC2 Certified in Cybersecurity (CC)",
+      "issuer": "ISC2",
       "date": "2025",
-      "status": "Passed; certification pending AMF"
+      "status": "Passed; certification pending AMF",
+      "description": "Global baseline certification validating cybersecurity principles, network security, and incident response.",
+      "highlight": "CC Exam Passed",
+      "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity",
+      "icon": "lock"
     },
-    { "title": "ALX ProDev – Advanced Backend Engineering", "date": "2025-08" },
-    { "title": "ALX Professional Foundations", "date": "2025-04" },
-    { "title": "ALX AiCE – AI Career Essentials", "date": "2024-11" },
-    { "title": "ALX Africa – Software Engineering (Full Stack)", "date": "2024-07" },
-    { "title": "Electronic Arts Virtual Experience Program — Forage", "date": "" },
-    { "title": "Volunteer Peer Reviewer — ALX Software Engineering Program", "date": "" }
+    {
+      "title": "ALX ProDev – Advanced Backend Engineering",
+      "issuer": "ALX",
+      "date": "2025-08",
+      "description": "Advanced fellowship covering scalable backend architecture, observability, and DevOps practices.",
+      "highlight": "Backend Fellowship Graduate",
+      "icon": "server"
+    },
+    {
+      "title": "ALX Professional Foundations",
+      "issuer": "ALX",
+      "date": "2025-04",
+      "description": "Career accelerator focused on leadership, communication, and remote collaboration excellence.",
+      "highlight": "Leadership Foundations",
+      "icon": "compass"
+    },
+    {
+      "title": "ALX AiCE – AI Career Essentials",
+      "issuer": "ALX",
+      "date": "2024-11",
+      "description": "AI literacy program exploring responsible AI adoption, prompt engineering, and modern tooling.",
+      "highlight": "AI Career Essentials",
+      "icon": "spark"
+    },
+    {
+      "title": "ALX Africa – Software Engineering (Full Stack)",
+      "issuer": "ALX Africa",
+      "date": "2024-07",
+      "description": "18-month full stack fellowship spanning algorithms, backend systems, and team delivery.",
+      "highlight": "Full-Stack Fellowship",
+      "icon": "layers"
+    },
+    {
+      "title": "Electronic Arts Virtual Experience Program — Forage",
+      "issuer": "Electronic Arts",
+      "date": "",
+      "description": "Virtual studio sprint exploring EA's game tech workflows, APIs, and collaborative practices.",
+      "highlight": "Game Tech Experience",
+      "icon": "gamepad"
+    },
+    {
+      "title": "Volunteer Peer Reviewer — ALX Software Engineering Program",
+      "issuer": "ALX",
+      "date": "",
+      "description": "Reviewed peer submissions to uphold engineering quality and mentor junior developers.",
+      "highlight": "Peer Reviewer",
+      "icon": "mentor"
+    }
   ],
   "testimonials": [
     {
@@ -193,7 +214,9 @@
       "date": "May 2025",
       "description": "Recognized for delivering the top capstone on cloud security hardening and incident response automation.",
       "image": "/awards/sidmach-nextgen-distinction.svg",
-      "credentialUrl": "https://www.sidmach.com/"
+      "credentialUrl": "https://www.sidmach.com/",
+      "highlight": "Top Capstone Distinction",
+      "icon": "shield"
     },
     {
       "title": "ISC2 Certified in Cybersecurity (CC)",
@@ -201,7 +224,9 @@
       "date": "2025",
       "description": "Completed the ISC2 CC examination, demonstrating global cybersecurity fundamentals and best practices.",
       "image": "/awards/isc2-cc-certificate.svg",
-      "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity"
+      "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity",
+      "highlight": "ISC2 CC Certified",
+      "icon": "lock"
     },
     {
       "title": "ALX ProDev — Advanced Backend Engineering Graduate",
@@ -209,7 +234,9 @@
       "date": "August 2025",
       "description": "Awarded for building and deploying a production-ready e-commerce backend with CI/CD and observability.",
       "image": "/awards/alx-backend-honors.svg",
-      "credentialUrl": "https://www.alxafrica.com/pro-dev/"
+      "credentialUrl": "https://www.alxafrica.com/pro-dev/",
+      "highlight": "Capstone Honors",
+      "icon": "server"
     }
   ],
   "contact": {

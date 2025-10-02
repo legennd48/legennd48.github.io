@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Adeola Oladele",
+    "role": "Senior Product Manager",
+    "company": "Beautiful Teachers",
+    "quote": "Abdulrazzaq transformed our legacy backend into a secure, observable service. He communicates clearly, ships fast, and never compromises on quality.",
+    "image": "/testimonials/adeola-oladele.svg"
+  },
+  {
+    "name": "Chiamaka Umeh",
+    "role": "Engineering Manager",
+    "company": "ALX ProDev",
+    "quote": "He pairs deep backend expertise with relentless curiosity. Every code review from Abdulrazzaq left the team learning something new.",
+    "image": "/testimonials/chiamaka-umeh.svg"
+  }
+]

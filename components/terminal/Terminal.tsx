@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getSiteContent } from '@/content/schema';
+import { getProjects } from '@/content/projects';
 
 type Entry = { text: string; type: 'input' | 'output' };
 
 const site = getSiteContent();
+const projects = getProjects();
 const commands = new Set(["help", "projects", "backend", "security", "awards", "testimonials", "resume", "contact", "chess", "clear", "ls", "whoami"]);
 
 export default function Terminal() {
@@ -53,18 +55,18 @@ export default function Terminal() {
         setLine('');
         return; // do not append input/output lines after clear
       case 'ls':
-        out.push(site.projects.map(p => `• ${p.name} — ${p.description}`).join('\n'));
+        out.push(projects.map((p) => `• ${p.name} — ${p.description}`).join('\n'));
         break;
       case 'projects':
-        out.push(site.projects.map(p => `• ${p.name} — ${p.description}`).join('\n'));
+        out.push(projects.map((p) => `• ${p.name} — ${p.description}`).join('\n'));
         break;
       case 'backend': {
-        const list = site.projects.filter(p => p.tags?.includes('backend'));
-        out.push(list.length ? list.map(p => `• ${p.name} — ${p.description}`).join('\n') : 'No backend projects found.');
+        const list = projects.filter((p) => p.tags?.includes('backend'));
+        out.push(list.length ? list.map((p) => `• ${p.name} — ${p.description}`).join('\n') : 'No backend projects found.');
         break;
       }
       case 'security': {
-        const list = site.projects.filter(p => p.tags?.includes('security'));
+        const list = projects.filter((p) => p.tags?.includes('security'));
         const certs = site.certifications?.map(c => `• ${c.title}${c.status ? ` — ${c.status}` : ''}`).join('\n') || '';
         const proj = list.length ? list.map(p => `• ${p.name} — ${p.description}`).join('\n') : '';
         out.push([proj, certs].filter(Boolean).join('\n'));

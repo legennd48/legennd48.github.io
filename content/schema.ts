@@ -1,20 +1,36 @@
 import { z } from 'zod';
 import type { SiteContent } from './types';
-import site from './site.json';
+import heroContent from './hero.json';
+import skillsContent from './skills.json';
+import experienceContent from './experience.json';
+import certificationsContent from './certifications.json';
+import testimonialsContent from './testimonials.json';
+import awardsContent from './awards.json';
+import contactContent from './contact.json';
+import highlightsContent from './highlights.json';
+import terminalContent from './terminal.json';
 
-const LinkSet = z.object({
-  website: z.string().url().optional(),
-  github: z.string().url().optional(),
-  demo: z.string().url().optional(),
-});
+function parseSection<T>(schema: z.ZodType<T>, data: unknown, label: string): T {
+  const parsed = schema.safeParse(data);
+  if (!parsed.success) {
+    const message = parsed.error.issues.map((issue) => `${issue.path.join('.') || '(root)'} - ${issue.message}`).join('\n');
+    throw new Error(`Invalid ${label}:\n${message}`);
+  }
+  return parsed.data;
+}
 
-const Project = z.object({
+const Hero = z.object({
   name: z.string(),
-  description: z.string(),
-  tech: z.array(z.string()),
-  links: LinkSet.optional(),
-  tags: z.array(z.string()).optional(),
-  status: z.string().optional(),
+  role: z.string(),
+  location: z.string().optional(),
+  summary: z.string(),
+  contacts: z.object({
+    email: z.string().email(),
+    phone: z.string().optional(),
+    linkedin: z.string().url().optional(),
+    github: z.string().url().optional(),
+  }),
+  cta: z.object({ downloadCvUrl: z.string().optional() }).optional(),
 });
 
 const Experience = z.object({
@@ -38,8 +54,14 @@ const SkillCategory = z.object({
 
 const Certification = z.object({
   title: z.string(),
+  issuer: z.string().optional(),
   date: z.string().optional(),
   status: z.string().optional(),
+  description: z.string().optional(),
+  highlight: z.string().optional(),
+  credentialUrl: z.string().url().optional(),
+  image: z.string().optional(),
+  icon: z.string().optional(),
 });
 
 const Testimonial = z.object({
@@ -57,43 +79,41 @@ const Award = z.object({
   description: z.string().optional(),
   image: z.string(),
   credentialUrl: z.string().url().optional(),
-});
-
-export const SiteSchema = z.object({
-  hero: z.object({
-    name: z.string(),
-    role: z.string(),
-    location: z.string().optional(),
-    summary: z.string(),
-    contacts: z.object({
-      email: z.string().email(),
-      phone: z.string().optional(),
-      linkedin: z.string().url().optional(),
-      github: z.string().url().optional(),
-    }),
-    cta: z.object({ downloadCvUrl: z.string().optional() }).optional(),
-  }),
-  skills: z.array(SkillCategory),
-  projects: z.array(Project),
-  experience: z.array(Experience),
-  certifications: z.array(Certification).optional(),
-  testimonials: z.array(Testimonial).optional(),
-  awards: z.array(Award).optional(),
-  contact: z.object({
-    email: z.string().email(),
-    linkedin: z.string().url().optional(),
-    github: z.string().url().optional(),
-    phone: z.string().optional(),
-  }),
-  highlights: z.object({ chess: z.string().optional() }).optional(),
-  terminal: z.object({ commands: z.array(z.string()).optional() }).optional(),
+  highlight: z.string().optional(),
+  icon: z.string().optional(),
 });
 
 export function getSiteContent(): SiteContent {
-  const parsed = SiteSchema.safeParse(site);
-  if (!parsed.success) {
-    const message = parsed.error.issues.map((i) => `${i.path.join('.')} - ${i.message}`).join('\n');
-    throw new Error(`Invalid site.json:\n${message}`);
-  }
-  return parsed.data as SiteContent;
+  const hero = parseSection(Hero, heroContent, 'hero.json');
+  const skills = parseSection(z.array(SkillCategory), skillsContent, 'skills.json');
+  const experience = parseSection(z.array(Experience), experienceContent, 'experience.json');
+  const certifications = parseSection(z.array(Certification), certificationsContent, 'certifications.json');
+  const testimonials = parseSection(z.array(Testimonial), testimonialsContent, 'testimonials.json');
+  const awards = parseSection(z.array(Award), awardsContent, 'awards.json');
+  const contact = parseSection(
+    z.object({
+      email: z.string().email(),
+      linkedin: z.string().url().optional(),
+      github: z.string().url().optional(),
+      phone: z.string().optional(),
+    }),
+    contactContent,
+    'contact.json',
+  );
+  const highlights = parseSection(z.object({ chess: z.string().optional() }), highlightsContent, 'highlights.json');
+  const terminal = parseSection(z.object({ commands: z.array(z.string()).optional() }), terminalContent, 'terminal.json');
+
+  const content: SiteContent = {
+    hero,
+    skills,
+    experience,
+    certifications: certifications.length ? certifications : undefined,
+    testimonials: testimonials.length ? testimonials : undefined,
+    awards: awards.length ? awards : undefined,
+    contact,
+    highlights: Object.keys(highlights).length ? highlights : undefined,
+    terminal: terminal.commands?.length ? terminal : undefined,
+  };
+
+  return content;
 }
