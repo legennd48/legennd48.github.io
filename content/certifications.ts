@@ -11,7 +11,9 @@ const CertificationSchema = z.object({
   highlight: z.string().optional(),
   credentialUrl: z.string().url().optional(),
   image: z.string().optional(),
+  imageAlt: z.string().optional(),
   icon: z.string().optional(),
+  category: z.enum(['certification', 'completion', 'achievement', 'recognition']).optional(),
 });
 
 const CertificationsSchema = z.array(CertificationSchema);

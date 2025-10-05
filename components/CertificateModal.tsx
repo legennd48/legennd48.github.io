@@ -14,6 +14,8 @@ type CertificateModalProps = {
   image: string;
   credentialUrl?: string;
   kind: 'award' | 'certification';
+  imageAlt?: string;
+  typeLabel?: string;
 };
 
 export default function CertificateModal({
@@ -25,6 +27,8 @@ export default function CertificateModal({
   image,
   credentialUrl,
   kind,
+  imageAlt,
+  typeLabel,
 }: CertificateModalProps) {
   useEffect(() => {
     if (!isOpen) return;
@@ -87,7 +91,7 @@ export default function CertificateModal({
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900/80">
               <Image
                 src={image}
-                alt={`${title} certificate`}
+                alt={imageAlt ?? `${title} certificate`}
                 fill
                 sizes="(min-width: 1024px) 896px, 100vw"
                 className="object-contain"
@@ -105,6 +109,12 @@ export default function CertificateModal({
                   {title}
                 </h2>
                 <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300/80">
+                  {typeLabel ? (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-slate-200/80">
+                      {typeLabel}
+                    </span>
+                  ) : null}
+                  {typeLabel ? <span className="text-slate-500">·</span> : null}
                   <span className="inline-flex items-center gap-2 text-slate-200">
                     <span
                       className={`h-2 w-2 rounded-full ${

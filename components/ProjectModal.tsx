@@ -9,18 +9,23 @@ import {
   FiExternalLink,
   FiFileText,
   FiGithub,
+  FiMonitor,
   FiPlayCircle,
   FiVideo,
   FiX,
+  FiZap,
 } from 'react-icons/fi';
+import { SiGoogledrive } from 'react-icons/si';
 import type { LinkSet, Project } from '@/content/types';
 
-const LINK_META: Record<keyof LinkSet, { label: string; Icon: IconType }> = {
-  website: { label: 'Live site', Icon: FiExternalLink },
-  github: { label: 'GitHub', Icon: FiGithub },
-  demo: { label: 'Interactive demo', Icon: FiPlayCircle },
+const LINK_META: Partial<Record<keyof LinkSet, { label: string; Icon: IconType }>> = {
+  website: { label: 'Visit site', Icon: FiExternalLink },
+  github: { label: 'View source', Icon: FiGithub },
+  demo: { label: 'Video demo', Icon: FiPlayCircle },
+  'interactive demo': { label: 'Try live API', Icon: FiZap },
+  slides: { label: 'View slides', Icon: FiMonitor },
   docs: { label: 'Documentation', Icon: FiBookOpen },
-  video: { label: 'Video walkthrough', Icon: FiVideo },
+  video: { label: 'Watch demo', Icon: FiVideo },
   caseStudy: { label: 'Case study', Icon: FiFileText },
 };
 
@@ -167,14 +172,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <h3 className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-300/70">Resources</h3>
                   <div className="flex flex-wrap gap-3">
                     {linkEntries.map(([key, url]) => {
+                      const keyStr = String(key);
                       const meta = LINK_META[key] ?? {
-                        label: key,
+                        label: keyStr.charAt(0).toUpperCase() + keyStr.slice(1).replace(/([A-Z])/g, ' $1'),
                         Icon: FiExternalLink,
                       };
                       const { Icon, label } = meta;
                       return (
                         <a
-                          key={key}
+                          key={keyStr}
                           href={url}
                           className="inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-200 transition hover:border-cyan-300 hover:text-white"
                           target="_blank"

@@ -1,32 +1,32 @@
 [
   {
-    "title": "Cybersecurity NextGen Program Distinction",
-    "issuer": "Sidmach Technologies",
-    "date": "May 2025",
-    "description": "Recognized for delivering the top capstone on cloud security hardening and incident response automation.",
-    "image": "/awards/sidmach-nextgen-distinction.svg",
-    "credentialUrl": "https://www.sidmach.com/",
-    "highlight": "Top Capstone Distinction",
-    "icon": "shield"
+    "title": "Letter of Recognition — Volunteer Peer Reviewer",
+    "issuer": "ALX Africa",
+    "date": "2024",
+    "description": "Recognized for exceptional commitment, leadership, and collaboration as a Volunteer Peer Reviewer in the ALX Software Engineering Program.",
+    "image": "/awards/alx-recognition-letter.svg",
+    "credentialUrl": "https://drive.google.com/file/d/19CVcY0EtW8EGLG7TP4eBJQbg3zj7NbaQ/view?usp=sharing",
+    "highlight": "Peer Reviewer Recognition",
+    "icon": "award"
+  },
+  {
+    "title": "Forage — Electronic Arts Virtual Experience Program",
+    "issuer": "Electronic Arts (EA)",
+    "date": "2024",
+    "description": "Completed EA’s Software Engineering virtual experience, demonstrating professional-level problem-solving and technical skills recognized by Forage’s Student Success team.",
+    "image": "/awards/forage-ea-certificate.svg",
+    "credentialUrl": "https://drive.google.com/file/d/1D58g-EGSdG6LaOpK1Jcvyr5rQRGR3lGy/view?usp=sharing",
+    "highlight": "Outstanding Completion Recognition",
+    "icon": "star"
   },
   {
     "title": "ISC2 Certified in Cybersecurity (CC)",
     "issuer": "ISC2",
     "date": "2025",
-    "description": "Completed the ISC2 CC examination, demonstrating global cybersecurity fundamentals and best practices.",
+    "description": "Passed the ISC2 Certified in Cybersecurity (CC) examination, demonstrating globally recognized proficiency in cybersecurity fundamentals and professional ethics.",
     "image": "/awards/isc2-cc-certificate.svg",
-    "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity",
+    "credentialUrl": "https://www.isc2.org/",
     "highlight": "ISC2 CC Certified",
     "icon": "lock"
-  },
-  {
-    "title": "ALX ProDev — Advanced Backend Engineering Graduate",
-    "issuer": "ALX",
-    "date": "August 2025",
-    "description": "Awarded for building and deploying a production-ready e-commerce backend with CI/CD and observability.",
-    "image": "/awards/alx-backend-honors.svg",
-    "credentialUrl": "https://www.alxafrica.com/pro-dev/",
-    "highlight": "Capstone Honors",
-    "icon": "server"
   }
 ]

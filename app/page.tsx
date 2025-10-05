@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { IconType } from 'react-icons';
 import {
-  SiAmazonaws,
+  SiAmazon,
   SiDjango,
   SiDocker,
   SiFastapi,
@@ -47,7 +47,7 @@ import TestimonialCard from '@/components/TestimonialCard';
 import CredentialCard from '@/components/CredentialCard';
 import { useMode } from '@/components/ModeContext';
 import Terminal from '@/components/terminal/Terminal';
-import type { Project } from '@/content/types';
+import type { Project, Certification } from '@/content/types';
 
 const skillIconMap: Record<string, IconType> = {
   python: SiPython,
@@ -64,7 +64,7 @@ const skillIconMap: Record<string, IconType> = {
   docker: SiDocker,
   kubernetes: SiKubernetes,
   githubactions: SiGithubactions,
-  amazonaws: SiAmazonaws,
+  amazonaws: SiAmazon,
   nginx: SiNginx,
   owasp: SiOwasp,
   jsonwebtokens: SiJsonwebtokens,
@@ -97,6 +97,28 @@ export default function HomePage() {
   const certifications = useMemo(() => getCertifications(), []);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [expandedExperiences, setExpandedExperiences] = useState<Record<string, boolean>>({});
+  const certificationGroups = useMemo(() => {
+    const groups: Array<{ key: string; title: string; items: Certification[] }> = [
+      { key: 'certifications', title: 'Certifications', items: [] },
+      { key: 'certificates', title: 'Certificates of Completion & Achievement', items: [] },
+      { key: 'recognitions', title: 'Recognitions', items: [] },
+    ];
+
+    certifications.forEach((cert) => {
+      const category = cert.category ?? 'completion';
+      if (category === 'certification') {
+        groups[0].items.push(cert);
+        return;
+      }
+      if (category === 'recognition') {
+        groups[2].items.push(cert);
+        return;
+      }
+      groups[1].items.push(cert);
+    });
+
+    return groups.filter((group) => group.items.length > 0);
+  }, [certifications]);
 
   const softSkillsCategory = site.skills.find((cat) => cat.category.toLowerCase().includes('soft'));
   const orderedSkillCategories = softSkillsCategory
@@ -109,6 +131,18 @@ export default function HomePage() {
 
   const handleProjectClose = () => {
     setSelectedProject(null);
+  };
+
+  const getGridAlignment = (total: number, index: number) => {
+    const remainder = total % 3;
+    if (remainder === 1 && index === total - 1) {
+      return 'xl:col-start-2';
+    }
+    if (remainder === 2) {
+      if (index === total - 2) return 'xl:col-start-1';
+      if (index === total - 1) return 'xl:col-start-3';
+    }
+    return '';
   };
 
   const skillCards = orderedSkillCategories.flatMap((cat, index) => {
@@ -173,32 +207,7 @@ export default function HomePage() {
       </motion.div>
     );
 
-    if (!isSoftCategory) {
-      return [card];
-    }
-
-    const accent = (
-      <motion.div
-        key="skill-card-accent"
-        className="hidden flex-col items-center justify-center rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/40 to-slate-950/80 p-6 text-center text-slate-200 shadow-[0_26px_80px_rgba(15,23,42,0.35)] backdrop-blur xl:flex xl:col-start-2 xl:row-start-2"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, delay: Math.max(baseDelay - 0.04, 0), ease: 'easeOut' }}
-      >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-2xl text-cyan-200 shadow-[0_0_22px_rgba(56,189,248,0.45)]">
-          ✨
-        </span>
-        <h4 className="mt-4 font-display text-xs uppercase tracking-[0.4em] text-slate-200/80">
-          Craft & Culture
-        </h4>
-        <p className="mt-3 text-sm leading-relaxed text-slate-300/80">
-          Engineering craft balanced with human-centered skills to keep teams resilient.
-        </p>
-      </motion.div>
-    );
-
-    return [accent, card];
+    return [card];
   });
 
   useEffect(() => {
@@ -312,11 +321,11 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-lg">🛡️</span>
-                  <span>Security advocate championing safe defaults and incident readiness.</span>
+                  <span>Security-focused developer advocating safe defaults and system resilience.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-lg">🧭</span>
-                  <span>Mentor guiding junior engineers through architecture trade-offs.</span>
+                  <span>Peer mentor supporting teammates in understanding design and architecture choices.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-lg">✍️</span>
@@ -328,30 +337,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section id="skills" title="Skills">
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {skillCards}
-        </div>
-      </Section>
-
       <Section id="projects" title="Projects">
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => {
-            const total = projects.length;
-            const remainder = total % 3;
-            let alignmentClass = '';
-            if (remainder === 1 && index === total - 1) {
-              alignmentClass = 'xl:col-start-2';
-            } else if (remainder === 2) {
-              if (index === total - 2) alignmentClass = 'xl:col-start-1';
-              if (index === total - 1) alignmentClass = 'xl:col-start-3';
-            }
+            const alignmentClass = getGridAlignment(projects.length, index);
             return (
               <div key={project.name} className={alignmentClass}>
                 <ProjectCard project={project} index={index} onSelect={handleProjectSelect} />
               </div>
             );
           })}
+        </div>
+      </Section>
+
+  <Section id="skills" title="Skills & Tools">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {skillCards}
         </div>
       </Section>
 
@@ -396,15 +397,7 @@ export default function HomePage() {
         <Section id="awards" title="Awards & Recognitions">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {awards.map((award, index) => {
-              const total = awards.length;
-              const remainder = total % 3;
-              let alignmentClass = '';
-              if (remainder === 1 && index === total - 1) {
-                alignmentClass = 'xl:col-start-2';
-              } else if (remainder === 2) {
-                if (index === total - 2) alignmentClass = 'xl:col-start-1';
-                if (index === total - 1) alignmentClass = 'xl:col-start-3';
-              }
+              const alignmentClass = getGridAlignment(awards.length, index);
               return (
                 <div key={`${award.title}-${award.issuer}`} className={alignmentClass}>
                   <CredentialCard credential={{ ...award, kind: 'award' }} index={index} />
@@ -415,25 +408,31 @@ export default function HomePage() {
         </Section>
       ) : null}
 
-      {certifications?.length ? (
+      {certificationGroups.length ? (
         <Section id="certifications" title="Education & Certifications">
-          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-            {certifications.map((cert, index) => {
-              const total = certifications.length;
-              const remainder = total % 3;
-              let alignmentClass = '';
-              if (remainder === 1 && index === total - 1) {
-                alignmentClass = 'xl:col-start-2';
-              } else if (remainder === 2) {
-                if (index === total - 2) alignmentClass = 'xl:col-start-1';
-                if (index === total - 1) alignmentClass = 'xl:col-start-3';
-              }
-              return (
-                <div key={`${cert.title}-${cert.date || ''}`} className={alignmentClass}>
-                  <CredentialCard credential={{ ...cert, kind: 'certification' }} index={index} />
+          <div className="space-y-12">
+            {certificationGroups.map((group) => (
+              <div key={group.key} className="space-y-5">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="font-display text-sm uppercase tracking-[0.4em] text-slate-300/80">
+                    {group.title}
+                  </h3>
+                  <span className="text-xs uppercase tracking-[0.3em] text-slate-500/70">
+                    {group.items.length} {group.items.length === 1 ? 'entry' : 'entries'}
+                  </span>
                 </div>
-              );
-            })}
+                <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                  {group.items.map((cert, index) => {
+                    const alignmentClass = getGridAlignment(group.items.length, index);
+                    return (
+                      <div key={`${group.key}-${cert.title}-${cert.date || ''}`} className={alignmentClass}>
+                        <CredentialCard credential={{ ...cert, kind: 'certification' }} index={index} />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </Section>
       ) : null}

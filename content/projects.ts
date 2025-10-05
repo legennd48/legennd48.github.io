@@ -9,7 +9,8 @@ const LinkSet = z.object({
   docs: z.string().url().optional(),
   video: z.string().url().optional(),
   caseStudy: z.string().url().optional(),
-});
+  slides: z.string().url().optional(),
+}).catchall(z.string().url()); // Allow any additional link types as URLs
 
 const ProjectSchema = z.object({
   name: z.string(),

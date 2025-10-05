@@ -4,6 +4,7 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import ThemeProvider from '@/components/ThemeProvider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingControls from '@/components/FloatingControls';
 import { ModeProvider } from '@/components/ModeContext';
 
 const siteUrl = new URL('https://legennd48.github.io');
@@ -87,7 +88,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <ModeProvider>
             <Header />
-            <div id="content">{children}</div>
+            <FloatingControls />
+            <div id="content" className="pt-[73px]">{children}</div>
             <Footer />
           </ModeProvider>
         </ThemeProvider>

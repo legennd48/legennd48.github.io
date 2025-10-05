@@ -5,6 +5,8 @@ export type LinkSet = {
   docs?: string;
   video?: string;
   caseStudy?: string;
+  slides?: string;
+  [key: string]: string | undefined; // Allow any additional link types dynamically
 };
 
 export type Project = {
@@ -49,7 +51,9 @@ export type Certification = {
   highlight?: string;
   credentialUrl?: string;
   image?: string;
+  imageAlt?: string;
   icon?: string;
+  category?: 'certification' | 'completion' | 'achievement' | 'recognition';
 };
 
 export type Testimonial = {

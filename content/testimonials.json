@@ -1,16 +1,16 @@
 [
   {
-    "name": "Adeola Oladele",
-    "role": "Senior Product Manager",
+    "name": "Wilaiporn Gloria Solomon",
+    "role": "Product Manager",
     "company": "Beautiful Teachers",
-    "quote": "Abdulrazzaq transformed our legacy backend into a secure, observable service. He communicates clearly, ships fast, and never compromises on quality.",
-    "image": "/testimonials/adeola-oladele.svg"
+    "quote": "Ade is very thorough and attentive to detail. He doesn’t just rush through tasks; he takes his time to deliver quality work. He’s reliable, dedicated, and always goes the extra mile to meet deadlines. I highly recommend him to anyone looking for a solid developer.",
+    "image": "/testimonials/placeholder-profile.svg"
   },
   {
-    "name": "Chiamaka Umeh",
-    "role": "Engineering Manager",
-    "company": "ALX ProDev",
-    "quote": "He pairs deep backend expertise with relentless curiosity. Every code review from Abdulrazzaq left the team learning something new.",
-    "image": "/testimonials/chiamaka-umeh.svg"
+    "name": "ALX Team – Letter of Recognition",
+    "role": "Program Faculty",
+    "company": "ALX Africa",
+    "quote": "In recognition of outstanding contribution as a Volunteer Peer Reviewer — demonstrating exceptional commitment, collaboration, and leadership throughout the Software Engineering Program.",
+    "image": "/testimonials/placeholder-profile.svg"
   }
 ]
