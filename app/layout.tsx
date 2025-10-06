@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Space_Grotesk, Inter } from 'next/font/google';
 import ThemeProvider from '@/components/ThemeProvider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,9 +7,6 @@ import FloatingControls from '@/components/FloatingControls';
 import { ModeProvider } from '@/components/ModeContext';
 
 const siteUrl = new URL('https://legennd48.github.io');
-
-const headingFont = Space_Grotesk({ subsets: ['latin'], variable: '--font-heading' });
-const bodyFont = Inter({ subsets: ['latin'], variable: '--font-body' });
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -66,7 +62,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html lang="en">
       <body className="min-h-dvh bg-slate-950 font-sans text-slate-100 antialiased">
         <span className="fixed inset-0 -z-10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" aria-hidden />
         <span className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.35),transparent_55%),radial-gradient(circle_at_80%_35%,rgba(236,72,153,0.3),transparent_50%),radial-gradient(circle_at_50%_80%,rgba(45,212,191,0.28),transparent_55%)] blur-3xl" aria-hidden />

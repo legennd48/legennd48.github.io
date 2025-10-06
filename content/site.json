@@ -20,8 +20,7 @@
       "skills": [
         { "name": "Python", "icon": "python" },
         { "name": "Django", "icon": "django" },
-        { "name": "FastAPI", "icon": "fastapi" },
-  { "name": "Node.js", "icon": "nodedotjs" },
+        { "name": "Node.js", "icon": "nodedotjs" },
         { "name": "TypeScript", "icon": "typescript" },
         { "name": "NestJS", "icon": "nestjs" }
       ]

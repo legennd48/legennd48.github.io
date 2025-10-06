@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulrazzaq A. Liasu - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        .resume-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 12mm 12mm;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2.5px solid #3498db;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header .title {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 17px;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        /* Professional Summary */
+        .summary {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #34495e;
+            text-align: justify;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 8px 10px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+
+        .skill-category h3 {
+            font-size: 12px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .experience-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .experience-date {
+            font-size: 11px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .experience-company {
+            font-size: 12px;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .experience-description {
+            margin-left: 12px;
+        }
+
+        .experience-description li {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+
+        /* Awards */
+        .award-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #27ae60;
+        }
+
+        .award-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .award-issuer {
+            font-size: 11px;
+            color: #7f8c8d;
+            margin-bottom: 3px;
+        }
+
+        .award-description {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Education Items */
+        .education-item {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .education-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .education-date {
+            font-size: 11px;
+            color: #7f8c8d;
+        }
+
+        .education-institution {
+            font-size: 11px;
+            color: #3498db;
+            margin-bottom: 2px;
+        }
+
+        .education-type {
+            font-size: 11px;
+            color: #27ae60;
+            font-weight: 500;
+        }
+
+        .education-description {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+            margin-top: 2px;
+        }
+
+        /* Beyond Code Section */
+        .beyond-code {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .beyond-item {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.4;
+            padding: 6px 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            display: flex;
+            align-items: start;
+            gap: 6px;
+        }
+
+        .beyond-item::before {
+            content: '▸';
+            color: #3498db;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume-container {
+                padding: 8mm 10mm;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            a {
+                color: #2c3e50 !important;
+                text-decoration: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .resume-container {
+                padding: 15px;
+            }
+
+            .skills-grid,
+            .beyond-code {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header,
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Abdulrazzaq A. Liasu</h1>
+            <p class="title">Backend Developer | Cybersecurity Associate | DevOps Enthusiast</p>
+            <div class="contact-info">
+                <span>📍 Ikeja, Lagos, Nigeria</span>
+                <span>📞 +234 708 504 3569</span>
+                <span>✉️ <a href="mailto:legennd48@gmail.com">legennd48@gmail.com</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/aaliasu" target="_blank">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com/legennd48" target="_blank">GitHub</a></span>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Cybersecurity-focused Backend Developer experienced in building secure, scalable APIs and automation pipelines. 
+                Proven record of improving system performance, securing applications, and implementing CI/CD workflows. 
+                ISC2 Certified in Cybersecurity (CC) and graduate of multiple ALX technical fellowships. Passionate about 
+                developing cloud-native, reliable, and resilient backend systems.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend & API Development</h3>
+                    <p>Python · Django · Flask · Node.js · NestJS · TypeScript · REST APIs · GraphQL · JWT · Microservices · Caching · Logging</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <p>PostgreSQL · MySQL · MongoDB · Redis · SQLite · Schema Design · Query Optimization · Backup & Recovery</p>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Infrastructure</h3>
+                    <p>Linux · Docker · Nginx · AWS · GitHub Actions · CI/CD · Kubernetes · Bash Scripting · Cloud Deployment</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <p>OWASP · RBAC · SIEM · API Security · Incident Response · System Hardening · Threat Modeling · Secure Architecture</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <p>Mentorship · Technical Writing · Leadership · Team Collaboration · Problem Solving · Strategic Thinking · Communication</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Freelance Backend Developer</span>
+                    <span class="experience-date">Mar 2023 – Present</span>
+                </div>
+                <p class="experience-company">Self-employed (Remote)</p>
+                <ul class="experience-description">
+                    <li>Designed and built RESTful APIs and microservices using Flask, Node.js, Django, and NestJS.</li>
+                    <li>Implemented authentication, caching, and secure endpoints.</li>
+                    <li>Contributed to backend security and system architecture decisions.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Database Design Lead — GreenZTech Project</span>
+                    <span class="experience-date">Sep 2024 – Nov 2024</span>
+                </div>
+                <p class="experience-company">GreenZTech (Remote)</p>
+                <ul class="experience-description">
+                    <li>Designed scalable PostgreSQL schema for a blockchain-integrated supply chain platform.</li>
+                    <li>Integrated schema with Ethereum Smart Contracts for verification and provenance tracking.</li>
+                    <li>Automated table setup and indexing with scripts.</li>
+                    <li>Delivered comprehensive technical documentation for backend integration.</li>
+                    <li>Project under NDA — technical deliverables remain confidential.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Founder & Lead Technician</span>
+                    <span class="experience-date">Sep 2019 – Mar 2023</span>
+                </div>
+                <p class="experience-company">LogicBase Tech & Edu Services (Ekiti, Nigeria)</p>
+                <ul class="experience-description">
+                    <li>Delivered IT support and system setup services for individuals and organizations.</li>
+                    <li>Managed a team of 5 technicians, improving service delivery and turnaround time.</li>
+                    <li>Designed data recovery procedures and internal security policies.</li>
+                    <li>Conducted digital literacy and networking training sessions.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Head of Marketing & Administration</span>
+                    <span class="experience-date">Sep 2015 – Sep 2019</span>
+                </div>
+                <p class="experience-company">Marvel Chess International (Ekiti, Nigeria)</p>
+                <ul class="experience-description">
+                    <li>Designed and delivered chess curricula for children and adults.</li>
+                    <li>Authored a children's chess workbook for structured learning.</li>
+                    <li>Recruited and managed staff to ensure effective program delivery.</li>
+                    <li>Led marketing and outreach initiatives that increased student enrollment.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section class="section">
+            <h2 class="section-title">Awards & Recognitions</h2>
+            
+            <div class="award-item">
+                <div class="award-title">Letter of Recognition — Volunteer Peer Reviewer</div>
+                <div class="award-issuer">ALX Africa · 2024</div>
+                <p class="award-description">
+                    Recognized for exceptional commitment, leadership, and collaboration as a Volunteer Peer Reviewer in the ALX Software Engineering Program.
+                </p>
+            </div>
+
+            <div class="award-item">
+                <div class="award-title">Outstanding Completion Recognition — Electronic Arts (EA) Virtual Experience Program</div>
+                <div class="award-issuer">Forage · 2024</div>
+                <p class="award-description">
+                    Completed EA's Software Engineering virtual experience, demonstrating problem-solving and collaborative engineering skills.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="section">
+            <h2 class="section-title">Education & Certifications</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">ALX ProDev – Advanced Backend Engineering</span>
+                    <span class="education-date">Aug 2025</span>
+                </div>
+                <p class="education-institution">ALX</p>
+                <p class="education-type">Certificate of Completion</p>
+                <p class="education-description">Advanced backend architecture, observability, CI/CD, Docker, and Kubernetes.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">Sidmach Technologies – Cybersecurity NextGen Program</span>
+                    <span class="education-date">May 2025</span>
+                </div>
+                <p class="education-institution">Sidmach Technologies</p>
+                <p class="education-type">Certificate of Achievement</p>
+                <p class="education-description">Hands-on training in cloud security, threat detection, and incident response.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">ALX Professional Foundations</span>
+                    <span class="education-date">Apr 2025</span>
+                </div>
+                <p class="education-institution">ALX</p>
+                <p class="education-type">Certificate of Completion</p>
+                <p class="education-description">Developed professional readiness, teamwork, and communication for technical careers.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">ISC2 Certified in Cybersecurity (CC)</span>
+                    <span class="education-date">2025</span>
+                </div>
+                <p class="education-institution">ISC2</p>
+                <p class="education-type">Certification Passed (Pending AMF)</p>
+                <p class="education-description">Validated global cybersecurity principles, risk management, and network defense.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">ALX AiCE – AI Career Essentials</span>
+                    <span class="education-date">Nov 2024</span>
+                </div>
+                <p class="education-institution">ALX</p>
+                <p class="education-type">Certificate of Completion</p>
+                <p class="education-description">Learned ethical AI practices, prompt engineering, and AI-powered productivity tools.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">ALX Africa – Software Engineering (Full Stack)</span>
+                    <span class="education-date">Jul 2024</span>
+                </div>
+                <p class="education-institution">ALX Africa</p>
+                <p class="education-type">Certificate of Completion</p>
+                <p class="education-description">Full-stack software engineering fellowship covering backend systems and teamwork.</p>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-title">Electronic Arts Virtual Experience Program — Forage</span>
+                    <span class="education-date">2024</span>
+                </div>
+                <p class="education-institution">Electronic Arts</p>
+                <p class="education-type">Certificate of Completion</p>
+                <p class="education-description">Gained insight into EA's software engineering workflows and project simulation practices.</p>
+            </div>
+        </section>
+
+        <!-- Beyond Code -->
+        <section class="section">
+            <h2 class="section-title">Beyond Code</h2>
+            <div class="beyond-code">
+                <div class="beyond-item">Chess coach nurturing strategic thinking in learners.</div>
+                <div class="beyond-item">Security advocate promoting system hardening and safe defaults.</div>
+                <div class="beyond-item">Peer mentor supporting team members with architectural reasoning.</div>
+                <div class="beyond-item">Technical writer simplifying complex systems into clear documentation.</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
