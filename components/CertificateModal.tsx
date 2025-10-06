@@ -52,6 +52,8 @@ export default function CertificateModal({
 
   const accentColor = kind === 'award' ? 'amber' : 'cyan';
 
+  const isSvg = image.trim().toLowerCase().endsWith('.svg');
+
   return (
     <AnimatePresence>
       {isOpen ? (
@@ -89,14 +91,23 @@ export default function CertificateModal({
             </button>
 
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900/80">
-              <Image
-                src={image}
-                alt={imageAlt ?? `${title} certificate`}
-                fill
-                sizes="(min-width: 1024px) 896px, 100vw"
-                className="object-contain"
-                priority
-              />
+              {isSvg ? (
+                <img
+                  src={image}
+                  alt={imageAlt ?? `${title} certificate`}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                <Image
+                  src={image}
+                  alt={imageAlt ?? `${title} certificate`}
+                  fill
+                  sizes="(min-width: 1024px) 896px, 100vw"
+                  className="object-contain"
+                  priority
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" aria-hidden />
             </div>
 

@@ -47,7 +47,7 @@ import TestimonialCard from '@/components/TestimonialCard';
 import CredentialCard from '@/components/CredentialCard';
 import { useMode } from '@/components/ModeContext';
 import Terminal from '@/components/terminal/Terminal';
-import type { Project, Certification } from '@/content/types';
+import type { Project } from '@/content/types';
 
 const skillIconMap: Record<string, IconType> = {
   python: SiPython,
@@ -97,27 +97,21 @@ export default function HomePage() {
   const certifications = useMemo(() => getCertifications(), []);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [expandedExperiences, setExpandedExperiences] = useState<Record<string, boolean>>({});
-  const certificationGroups = useMemo(() => {
-    const groups: Array<{ key: string; title: string; items: Certification[] }> = [
-      { key: 'certifications', title: 'Certifications', items: [] },
-      { key: 'certificates', title: 'Certificates of Completion & Achievement', items: [] },
-      { key: 'recognitions', title: 'Recognitions', items: [] },
-    ];
-
-    certifications.forEach((cert) => {
-      const category = cert.category ?? 'completion';
-      if (category === 'certification') {
-        groups[0].items.push(cert);
-        return;
+  const sortedCertifications = useMemo(() => {
+    const toTimestamp = (value?: string) => {
+      if (!value) return Number.NEGATIVE_INFINITY;
+      if (/^\d{4}-\d{2}$/.test(value)) {
+        const [year, month] = value.split('-').map(Number);
+        return new Date(year, (month || 1) - 1).getTime();
       }
-      if (category === 'recognition') {
-        groups[2].items.push(cert);
-        return;
+      if (/^\d{4}$/.test(value)) {
+        return new Date(Number(value), 0).getTime();
       }
-      groups[1].items.push(cert);
-    });
+      const parsed = Date.parse(value);
+      return Number.isNaN(parsed) ? Number.NEGATIVE_INFINITY : parsed;
+    };
 
-    return groups.filter((group) => group.items.length > 0);
+    return [...certifications].sort((a, b) => toTimestamp(b.date) - toTimestamp(a.date));
   }, [certifications]);
 
   const softSkillsCategory = site.skills.find((cat) => cat.category.toLowerCase().includes('soft'));
@@ -408,31 +402,17 @@ export default function HomePage() {
         </Section>
       ) : null}
 
-      {certificationGroups.length ? (
+      {sortedCertifications.length ? (
         <Section id="certifications" title="Education & Certifications">
-          <div className="space-y-12">
-            {certificationGroups.map((group) => (
-              <div key={group.key} className="space-y-5">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <h3 className="font-display text-sm uppercase tracking-[0.4em] text-slate-300/80">
-                    {group.title}
-                  </h3>
-                  <span className="text-xs uppercase tracking-[0.3em] text-slate-500/70">
-                    {group.items.length} {group.items.length === 1 ? 'entry' : 'entries'}
-                  </span>
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            {sortedCertifications.map((cert, index) => {
+              const alignmentClass = getGridAlignment(sortedCertifications.length, index);
+              return (
+                <div key={`${cert.title}-${cert.date || ''}`} className={alignmentClass}>
+                  <CredentialCard credential={{ ...cert, kind: 'certification' }} index={index} />
                 </div>
-                <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-                  {group.items.map((cert, index) => {
-                    const alignmentClass = getGridAlignment(group.items.length, index);
-                    return (
-                      <div key={`${group.key}-${cert.title}-${cert.date || ''}`} className={alignmentClass}>
-                        <CredentialCard credential={{ ...cert, kind: 'certification' }} index={index} />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </Section>
       ) : null}

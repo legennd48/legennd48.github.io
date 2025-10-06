@@ -1,15 +1,15 @@
 [
   {
-    "title": "Sidmach Technologies – Cybersecurity NextGen Program",
+    "title": "Foundamentals of Cybersecurity",
     "issuer": "Sidmach Technologies",
     "date": "2025-05",
     "status": "Completed — Certified",
     "description": "Completed the Sidmach NextGen Cybersecurity Program, gaining hands-on skills in cloud security, threat detection, and incident response.",
     "highlight": "Certificate of Achievement",
-    "credentialUrl": "https://www.sidmach.com/",
     "icon": "shield",
     "category": "achievement",
-    "image": "/certificates/certificate-placeholder.svg",
+    "accent": "amethyst",
+    "image": "/certificates/NextGen_Certificate_of_Completion.svg",
     "imageAlt": "Sidmach Technologies Cybersecurity NextGen certificate"
   },
   {
@@ -22,6 +22,7 @@
     "credentialUrl": "https://www.isc2.org/credentials/certified-in-cybersecurity",
     "icon": "lock",
     "category": "certification",
+    "accent": "azure",
     "image": "/certificates/certificate-placeholder.svg",
     "imageAlt": "ISC2 Certified in Cybersecurity certificate"
   },
@@ -29,11 +30,12 @@
     "title": "ALX ProDev – Advanced Backend Engineering",
     "issuer": "ALX",
     "date": "2025-08",
-    "description": "Focused on advanced backend architecture, Django, CI/CD pipelines, observability, and container orchestration with Docker and Kubernetes.",
+    "description": "Focused on advanced backend architecture, Advanced ORM, Django, CI/CD pipelines, observability, and container orchestration with Docker and Kubernetes.",
     "highlight": "Backend Engineering Fellowship",
     "icon": "server",
     "category": "completion",
-    "image": "/certificates/certificate-placeholder.svg",
+    "accent": "crimson",
+    "image": "/certificates/prodev.svg",
     "imageAlt": "ALX ProDev Advanced Backend Engineering certificate"
   },
   {
@@ -44,7 +46,8 @@
     "highlight": "Professional Foundations Graduate",
     "icon": "compass",
     "category": "completion",
-    "image": "/certificates/certificate-placeholder.svg",
+    "accent": "sunset",
+    "image": "/certificates/professional-foundations.svg",
     "imageAlt": "ALX Professional Foundations certificate"
   },
   {
@@ -55,7 +58,8 @@
     "highlight": "AI Career Essentials",
     "icon": "spark",
     "category": "completion",
-    "image": "/certificates/certificate-placeholder.svg",
+    "accent": "orchid",
+    "image": "/certificates/aice.svg",
     "imageAlt": "ALX AI Career Essentials certificate"
   },
   {
@@ -66,29 +70,8 @@
     "highlight": "Full-Stack Fellowship Graduate",
     "icon": "layers",
     "category": "completion",
-    "image": "/certificates/certificate-placeholder.svg",
+    "accent": "royal",
+    "image": "/certificates/fullstack.svg",
     "imageAlt": "ALX Software Engineering full stack certificate"
-  },
-  {
-    "title": "Electronic Arts Virtual Experience Program",
-    "issuer": "Electronic Arts (via Forage)",
-    "date": "2024",
-    "description": "Completed EA’s virtual experience on Forage, simulating real-world engineering workflows and team collaboration practices.",
-    "highlight": "Virtual Experience Completion",
-    "icon": "gamepad",
-    "category": "completion",
-    "image": "/certificates/certificate-placeholder.svg",
-    "imageAlt": "Electronic Arts virtual experience certificate"
-  },
-  {
-    "title": "Volunteer Peer Reviewer – ALX Software Engineering Program",
-    "issuer": "ALX",
-    "date": "2024",
-    "description": "Served as a peer reviewer, assessing project submissions and mentoring fellow learners to ensure engineering quality and best practices.",
-    "highlight": "Peer Reviewer Recognition",
-    "icon": "mentor",
-    "category": "recognition",
-    "image": "/certificates/certificate-placeholder.svg",
-    "imageAlt": "ALX volunteer peer reviewer recognition certificate"
   }
 ]

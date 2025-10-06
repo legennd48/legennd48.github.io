@@ -42,6 +42,15 @@ export type SkillCategory = {
   skills: SkillItem[];
 };
 
+export type CertificationAccent =
+  | 'amethyst'
+  | 'azure'
+  | 'emerald'
+  | 'sunset'
+  | 'orchid'
+  | 'royal'
+  | 'crimson';
+
 export type Certification = {
   title: string;
   issuer?: string;
@@ -54,6 +63,7 @@ export type Certification = {
   imageAlt?: string;
   icon?: string;
   category?: 'certification' | 'completion' | 'achievement' | 'recognition';
+  accent?: CertificationAccent;
 };
 
 export type Testimonial = {

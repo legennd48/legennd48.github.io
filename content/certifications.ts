@@ -2,6 +2,8 @@ import { z } from 'zod';
 import type { Certification } from './types';
 import certifications from './certifications.json';
 
+const certificationAccentValues = ['amethyst', 'azure', 'emerald', 'sunset', 'orchid', 'royal', 'crimson'] as const;
+
 const CertificationSchema = z.object({
   title: z.string(),
   issuer: z.string().optional(),
@@ -14,6 +16,7 @@ const CertificationSchema = z.object({
   imageAlt: z.string().optional(),
   icon: z.string().optional(),
   category: z.enum(['certification', 'completion', 'achievement', 'recognition']).optional(),
+  accent: z.enum(certificationAccentValues).optional(),
 });
 
 const CertificationsSchema = z.array(CertificationSchema);
